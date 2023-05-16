@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style2.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="img/logo1.jpg" /></a>
+        </div>
+        <nav>
+          <a href="index.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+          <a href="services.html">SERVICES</a>
+          <a href="blog.html">BLOGS</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+        <div class="icon">
+          <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
+          <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+        </div>
+      </div>
+    <div class="container">
+        <div class="row">
+            <div class="header">
+                <h1>OUR BLOG</h1>
+                <p>In today's fast-paced world, the fashion industry plays a significant role in shaping trends and influencing consumer choices. At BU, we believe in staying at the forefront of the latest fashion trends while upholding our commitment to sustainability. In this blog post, we will delve into the latest fashion trends, highlight our best-selling products, and shed light on our sustainability efforts. Join us as we strive for a more stylish and sustainable future.</p>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <img src="img/trend.jpg" alt="image">
+                    <h4>LATEST FASHION TRENDS</h4>
+                    <p>Discover the latest fashion trends at BU, where you can embrace bold prints, vibrant colors, and oversized silhouettes that are currently capturing the attention of style enthusiasts. Stay fashion-forward with our collection, features sustainable fabrics, offering twist on iconic eras. Explore our versatile pieces that effortlessly blend contemporary style with timeless appeal, allowing you to express your unique fashion sensibility.</p>
+                </div>
+                <div class="card">
+                    <img src="img/bestsell (1).jpg" alt="image">
+                    <h4>BEST-SELLING</h4>
+                    <p>In BU, you can experience our best-selling products that combine style and sustainability. From our eco-chic denim jeans crafted from organic cotton and recycled fibers to our versatile knitwear designed for both comfort and style, each piece represents our commitment to quality and ethical fashion. Complete your look with our ethically made accessories, showcasing our dedication to supporting fair trade practices.</p>
+                </div>
+                <div class="card">
+                    <img src="img/ose.jpg" alt="image">
+                    <h4>OUR SUSTAINABILTY EFFORTS</h4>
+                    <p>We are passionate about sustainability and are actively working to reduce our environmental impact. Through responsible sourcing, waste reduction measures, and carbon footprint reduction initiatives, we aim to promote eco-conscious practices. By choosing BU, you are joining us in our commitment to a better and more sustainable future for the fashion industry.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-2">
+          <div class="row">
+            <div class="footer-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Our services</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Affiliate program</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Get help</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Payment Options</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Follow us</h4>
+              <div class="social-links">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+      <script>
+        // smooth scroll to anchor links
+        const scroll = new SmoothScroll('.smooth-scroll a[href*="#"]', {
+          speed: 500,
+          offset: 80
+        });
+      </script>
+      <script>
+        // Get the menu button and the navigation element
+          const menuBtn = document.querySelector('.menu-btn');
+          const nav = document.querySelector('nav');
+  
+        // Add a click event listener to the menu button
+          menuBtn.addEventListener('click', () => {
+        // Toggle the active class on the navigation element
+          nav.classList.toggle('active');
+          });
+      </script>
+</body>
+</html>

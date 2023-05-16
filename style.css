@@ -1,0 +1,436 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 0.2em;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+nav {
+  display: flex;
+  gap: 3em;
+}
+
+nav.active {
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.icon a{
+  margin: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  transition: 0.3s ease;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.icon a:hover {
+  color: #F48FB1;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #F48FB1;
+  border-radius: 5px;
+  font-size: xx-large;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage {
+  flex: 60%;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin-top: 15%;
+  margin-bottom: 3em;
+}
+
+.homepage-slogan {
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 0.7em;
+}
+
+.homepage-slogan span {
+  color: #F48FB1;
+}
+
+.shop-button {
+  color: #fff;
+  padding: 0.7em 2em;
+  font-size: 2rem;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  transition: 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #000;
+  padding: 0.8em 2.1em;
+  font-size: 2.1rem;
+
+}
+
+.content {
+  flex: 40%;
+}
+
+
+/*CONTENT*/
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  padding: 4.7em 6em;
+  background-color: rgb(255, 255, 255);
+  padding: 2% 10%;  
+
+}
+
+.category {
+  width: 20%;
+  min-height: 35vh;
+  background-color: rgba(81, 81, 81, 0.5);
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-color: rgb(255, 255, 255);
+  margin: 1rem;
+  font-size: xx-large;
+  margin-top: 5rem;
+}
+
+
+.header-text-content{
+  text-align: center;
+  margin-top: 3rem;
+  font-size: x-large;
+}
+
+.category:hover {
+  background-color: rgb(221, 75, 123);
+  box-shadow: 1px 1px 10px black;
+}
+
+.category a {
+  display: flex;
+  flex: 1;
+  color: #333333;
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: white;
+  font-weight: lighter;
+}
+
+.prodicon {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.prodicon i {
+  font-size: 3em;
+}
+
+.aside{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ads{
+  flex: 40%;
+  background-color: white;
+  padding: 20px;
+}
+
+.section{
+  flex: 60%;
+  background-color: white;
+  padding: 20px;
+}
+/* hhh */
+.section{
+  position: relative;
+}
+.button {
+  position: absolute;
+  z-index: 1;
+  
+}
+
+.button-1 {
+  top: 80%;
+  left: 75%;
+  color: #fff;
+  padding: 2.2em 5em;
+  font-size: 2rem;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  transition: 0.3s ease;
+}
+
+.button-1:hover {
+  background-color: #000;
+  padding: 2.10em 5.10em;
+  font-size: 2.1rem;
+}
+
+
+.banner-slogan {
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 0.7em;
+}
+
+.banner-slogan span {
+  color: #F48FB1;
+}
+.ads-text {
+  color: black;
+}
+
+.ads-text span {
+  color: goldenrod;
+}
+
+@media only screen and (max-width: 767px) {
+  .ads-sale {
+    padding: 10px;
+  }
+
+  .ads-text {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
+
+/* FOOTER */
+.container-2{
+  max-width: 73.125rem;
+  margin:auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #D3D3D3;
+  padding: 4.375rem 0;
+}
+
+.footer-col{
+  width: 25%;
+  padding: 0 0.938rem ;
+}
+
+.footer-col h4{
+  font-size: 1.125rem;
+  color: black;
+  text-transform: capitalize;
+  margin-bottom: 2.188rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 0.125rem;
+  box-sizing: border-box;
+  width: 3.125rem;
+}
+
+.footer-col ul li:not(:last-child){
+  margin-bottom: 0.625rem;
+}
+
+.footer-col ul li a{
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color:  black;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+  color: goldenrod;
+  padding-left: 0.625;
+}
+
+.footer-col .social-links a{
+  display: inline-block;
+  height: 2rem;
+  width: 2.5rem;
+  background-color: rgba(255,255,255,0.2);
+  margin-right: 0 0.630rem 630rem 0;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 50%;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+  color: goldenrod;
+  background-color: #ffffff;
+}
+
+@media(max-width: 767px) {
+ footer {
+  text-align: center;
+  }
+
+ .footer-col h4::before{
+  left: 9rem;
+  width: 25%;
+  }
+
+  .footer-col{
+  width: 100%;
+  margin-bottom: 30px;
+  }
+    
+  .icon {
+    display: flex;
+  }
+  
+  nav {
+    position: absolute;
+    flex-direction: column;
+    gap: 1.5rem;
+    top: 6.5rem;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2em;
+    display: none;
+      
+  }
+  
+  .navbar nav a {
+    padding: 0.50rem;
+    display: flex;
+    justify-content: center;
+      
+  }
+    
+  
+  nav.active {
+    display: block;
+  }
+  
+  .menu-btn {
+    display: block;
+  }
+  
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  /* HOMEPAGE CONTENT*/
+  .shop-button {
+    font-size: 1rem;
+  }
+
+  .homepage-slogan {
+    font-size: 4rem;
+    margin-top: 1em;
+  }
+
+  .homepage {
+    width: 100%;
+  }
+
+  main {
+    min-height: 80vh;
+  }
+
+  .content {
+    flex-direction: column;
+    width: 90%;
+  }
+  .category {
+    width: 100%;
+  }
+
+  .aside {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ads {
+    width: 100%;
+  }
+
+}
