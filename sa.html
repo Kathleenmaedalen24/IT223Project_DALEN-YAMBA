@@ -1,399 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-    <link rel="stylesheet" href="products.css">
-    <style>
-        .product-categories{
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           margin-right: 10em;
-        }
-        .dropdown{
-         width: 130px;
-           text-align: center;
-           background-color: white;
-           border-radius: 3px;
-           margin-bottom: 160em;
-        }
-        /* FOOTER */
-        .container-2{
-          max-width: 73.125rem;
-          margin:auto;
-        }
-        
-         .row{
-          display: flex;
-          flex-wrap: wrap;
-        }
-        
-         ul{
-          list-style: none;
-        }
-        .footer{
-          background-color: #D3D3D3;
-          padding: 4.375rem 0;
-        }
-        
-        .footer-col{
-          width: 25%;
-          padding: 0 0.938rem ;
-        }
-        
-        .footer-col h4{
-          font-size: 1.125rem;
-          color: black;
-          text-transform: capitalize;
-          margin-bottom: 2.188rem;
-          font-weight: 500;
-          position: relative;
-          display: column;
-          
-        }
-        
-        .footer-col h4::before{
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          background-color: #e91e63;
-          height: 0.125rem;
-          box-sizing: border-box;
-          width: 3.125rem;
-        }
-        
-        .footer-col ul li:not(:last-child){
-          margin-bottom: 0.625rem;
-        }
-        
-        .footer-col ul li a{
-          font-size: 1rem;
-          text-transform: capitalize;
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: 300;
-          color:  black;
-          display: block;
-          transition: all 0.3s ease;
-        }
-        
-        .footer-col ul li a:hover{
-          color: goldenrod;
-          padding-left: 0.625;
-        }
-        
-        .footer-col .social-links a{
-          display: inline-block;
-          height: 2rem;
-          width: 2.5rem;
-          background-color: rgba(255,255,255,0.2);
-          margin-right: 0 0.630rem 630rem 0;
-          text-align: center;
-          line-height: 2.5rem;
-          border-radius: 50%;
-          color: black;
-          transition: all 0.5s ease;
-        }
-        
-        .footer-col .social-links a:hover{
-          color: goldenrod;
-          background-color: #ffffff;
-        }
-        
-        
-        
-        @media(max-width: 767px) {
-          footer {
-            text-align: center;
-            }
-        
-            .footer-col h4::before{
-            left: 9rem;
-            width: 25%;
-            }
-        
-            .footer-col{
-            width: 100%;
-            margin-bottom: 30px;
-            }
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="products.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    .product-categories {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 10em;
+    }
 
-/* Add this CSS code at the end of your existing CSS code */
+    .dropdown {
+      width: 130px;
+      text-align: center;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 160em;
+    }
 
-@media screen and (max-width: 767px) {
-  
+    /* FOOTER */
+    .container-2 {
+      max-width: 73.125rem;
+      margin: auto;
+    }
 
-  /* Product Categories */
-  .product-categories {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 0;
-    margin-bottom: 2em;
-  }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-  .dropdown {
-    margin-bottom: 1em;
-  }
+    ul {
+      list-style: none;
+    }
 
-  .container {
-    flex-direction: column;
-    width: 100%;
-  }
+    .footer {
+      background-color: #D3D3D3;
+      padding: 4.375rem 0;
+    }
 
-  #root {
-    width: 100%;
-    margin-bottom: 1em;
-  }
+    .footer-col {
+      width: 25%;
+      padding: 0 0.938rem;
+    }
 
-  .sidebar {
-    display: none;
-  }
+    .footer-col h4 {
+      font-size: 1.125rem;
+      color: black;
+      text-transform: capitalize;
+      margin-bottom: 2.188rem;
+      font-weight: 500;
+      position: relative;
+      display: column;
 
-  .box {
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 1em;
-  }
+    }
 
-  .img-box {
-    width: 100%;
-    height: auto;
-  }
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 0.125rem;
+      box-sizing: border-box;
+      width: 3.125rem;
+    }
 
-  .left {
-    width: 100%;
-    text-align: left;
-    margin-left: 0;
-  }
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 0.625rem;
+    }
 
-  img {
-    max-width: 100%;
-    margin-left: 0;
-  }
-}
+    .footer-col ul li a {
+      font-size: 1rem;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: black;
+      display: block;
+      transition: all 0.3s ease;
+    }
 
-          </style>
+    .footer-col ul li a:hover {
+      color: goldenrod;
+      padding-left: 0.625;
+    }
 
-    <title>Document</title>
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 2rem;
+      width: 2.5rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-right: 0 0.630rem 630rem 0;
+      text-align: center;
+      line-height: 2.5rem;
+      border-radius: 50%;
+      color: black;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: goldenrod;
+      background-color: #ffffff;
+    }
+
+
+
+    @media(max-width: 767px) {
+      footer {
+        text-align: center;
+      }
+
+      .footer-col h4::before {
+        left: 9rem;
+        width: 25%;
+      }
+
+      .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+    /* Add this CSS code at the end of your existing CSS code */
+
+    @media screen and (max-width: 767px) {
+
+
+      /* Product Categories */
+      .product-categories {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+        margin-bottom: 2em;
+      }
+
+      .dropdown {
+        margin-bottom: 1em;
+      }
+
+      .container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #root {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .box {
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 1em;
+      }
+
+      .img-box {
+        width: 100%;
+        height: auto;
+      }
+
+      .left {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+      }
+
+      img {
+        max-width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+  <title>Document</title>
+
 </head>
+
 <body>
-    <div class="products-sa">
+  <div class="product-dress">
     <div class="navbar">
-        <div class="logo">
-          <a href="index.html"><img src="img/logo1.jpg" /></a>
-        </div>
-        <nav>
-          <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="services.html">SERVICES</a>
-          <a href="blog.html">BLOGS</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-        <div class="icon">
-          <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
-          <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </div>
+      <div class="logo">
+        <a href="index.html"><img src="img/logo2 (2).jpg" /></a>
+      </div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="blog.html">BLOGS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="icon">
+        <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
+        <a href="checkout.html"><ion-icon name="cart-outline"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="product-categories">
+      <div class="dropdown">
+        <select id="categorySelect">
+          <option value="default">SORT BY</option>
+          <option value="dress.html">Dress</option>
+          <option value="tops.html">Tops</option>
+          <option value="bottom.html">Bottoms</option>
+          <option value="sa.html">Shoes and Accessories</option>
+        </select>
       </div>
 
-      <div class="product-categories">
-        <div class="dropdown">
-            <select id="categorySelect">
-                <option value="dress.html">Dress</option>
-                <option value="tops.html">Tops</option>
-                <option value="bottom.html">Bottoms</option>
-                <option value="sa.html">Shoes and Accessories</option>
-              </select>
+      <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+          <div class="sidebar-head">
+            <p>My Cart</p>
+          </div>
+          <div class="cart-item">Your cart is empty</div>
+          <div class="foot">
+            <h3>Total</h3>
+            <h2 id="total">₱ 0.00</h2>
+          </div>
         </div>
-      
-        <div class="container">
-            <div id="root"></div>
-            <div class="sidebar">sidebar</div>  
-        </div>
+      </div>
     </div>
-        <footer class="footer">
-            <div class="container-2">
-              <div class="row">
-                <div class="footer-col">
-                  <h4>Company</h4>
-                  <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Our services</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Affiliate program</a></li>
-                  </ul>
-                </div>
-                <div class="footer-col">
-                  <h4>Get help</h4>
-                  <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Order Status</a></li>
-                    <li><a href="#">Payment Options</a></li>
-                  </ul>
-                </div>
-                <div class="footer-col">
-                  <h4>Follow us</h4>
-                  <div class="social-links">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                  </div>
-                </div>
-              </div>
+    <footer class="footer">
+      <div class="container-2">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Our services</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Payment Options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
-          </footer>
-        <script>
-            const product = [
-                {
-                    id: 1,
-                    image: 'img/s&a1.png',
-                    title: 'Letter etail Shoulder Tote Bag',
-                    price: '₱ 823 <strike>₱1,016</strike> -19%'
-                },
-                {
-                    id: 2,
-                    image: 'img/s&a2.png',
-                    title: 'Straw Bag Paper Patch & Twilly Scarf Decor Contrast Binding',
-                    price: '₱ 414 <strike>₱552</strike> -19%'
-                },
-                {
-                    id: 3,
-                    image: 'img/s&a3.png',
-                    title: 'Hollow Out Design Straw Bag',
-                    price: '₱ 782 <strike>₱966</strike> -19%'
-                },
-                {
-                    id: 4,
-                    image: 'img/s&a4.png',
-                    title: '3pairs Square Frame Sunglasses',
-                    price: '₱ 197 <strike>₱304</strike> -35%'
-                },
-                {
-                    id: 5,
-                    image: 'img/s&a5.png',
-                    title: '1 pair Cat Eye Sunglasses',
-                    price: '₱ 145 <strike>₱223</strike> -35%'
-                },
-                {
-                    id: 6,
-                    image: 'img/s&a6.webp',
-                    title: 'Metal Frame Fashion Glasses Summer Beach Boho Decor',
-                    price: '₱ 167 <strike>₱258</strike> -35%'
-                },
-                {
-                    id: 7,
-                    image: 'img/s&a7.png',
-                    title: 'Chain<br>Print<br>Bandana',
-                    price: '₱ 126 <strike>₱194</strike> -35%'
-                },
-                {
-                    id: 8,
-                    image: 'img/s&a8.png',
-                    title: 'Bow<br>Decor<br>Hair<br>Clip',
-                    price: '$45'
-                },
-                {
-                    id: 9,
-                    image: 'img/s&a9.png',
-                    title: 'Smart Watch',
-                    price: '₱ 66 <strike>₱102</strike> -35%'
-                },
-                {
-                    id: 10,
-                    image: 'img/s&a10.png',
-                    title: 'Bow Decor Hair Claw',
-                    price: '₱ 55 <strike>₱34</strike> -35%'
-                },
-                {
-                    id: 11,
-                    image: 'img/s&a11.png',
-                    title: 'Women Minimalist Flip Flops, Plastic Fashion Flip Flops Black',
-                    price: '₱ 427 <strike>₱494</strike> -14%'
-                },
-                {
-                    id: 12,
-                    image: 'img/s&a12.png',
-                    title: 'Plastic Fashion Flip Flops Sandal',
-                    price: '₱ 427 <strike>₱494</strike> -14%'
-                },
-                {
-                    id: 13,
-                    image: 'img/s&a13.png',
-                    title: 'Colorblock High Top Skate Shoes',
-                    price: '₱ 1,127 <strike>₱1,304</strike> -14%'
-                },
-                {
-                    id: 14,
-                    image: 'img/s&a14.png',
-                    title: 'Women Color Block Breathable Mesh Lace-Up Front Chunky Sneakers',
-                    price: '₱ 1,127 <strike>₱1,304</strike> -14%'
-                },
-                {
-                    id: 15,
-                    image: 'img/s&a15.png',
-                    title: 'Tie Leg Design Chunky Heeled Strappy Sandals',
-                    price: '₱ 932 <strike>₱1,079</strike> -14%'
-                },
-                {
-                    id: 16,
-                    image: 'img/s&a16.png',
-                    title: 'Letter Detail<br>ace-up<br>Front Skate<br>Shoes',
-                    price: '₱ 1200 <strike>₱1,390</strike> -14%'
-                },
+          </div>
+        </div>
+      </div>
+    </footer>
 
-            ]
-            const categories = [...new Set(product.map((item)=>
-           {return item}))]
-    
-           let img = document.getElementById('root')
-           img.innerHTML = categories.map((item)=>
-           {
-            var {image, title, price} = item;
-               return(
-               `<div class="box">
-                    <div class="img-box">
-                        <img src=${image}></img>
-                    </div>
-                    <div class="left">
-                        <p>${title}</p>
-                        <h2>${price}</h2>
-                        <button>Add to Cart</button>    
-                    </div>
-                </div>`)
-           }).join('')
+    <script>
+      const product = [
+        {
+          id: 1,
+          image: 'img/s&a1.png',
+          title: 'Letter etail Shoulder Tote Bag',
+          price: '₱ 823 <strike>₱1,016</strike> -19%'
+        },
+        {
+          id: 2,
+          image: 'img/s&a2.png',
+          title: 'Straw Bag Paper Patch & Twilly Scarf Decor Contrast Binding',
+          price: '₱ 414 <strike>₱552</strike> -19%'
+        },
+        {
+          id: 3,
+          image: 'img/s&a3.png',
+          title: 'Hollow Out Design Straw Bag',
+          price: '₱ 782 <strike>₱966</strike> -19%'
+        },
+        {
+          id: 4,
+          image: 'img/s&a4.png',
+          title: '3pairs Square Frame Sunglasses',
+          price: '₱ 197 <strike>₱304</strike> -35%'
+        },
+        {
+          id: 5,
+          image: 'img/s&a5.png',
+          title: '1 pair Cat Eye Sunglasses',
+          price: '₱ 145 <strike>₱223</strike> -35%'
+        },
+        {
+          id: 6,
+          image: 'img/s&a6.webp',
+          title: 'Metal Frame Fashion Glasses Summer Beach Boho Decor',
+          price: '₱ 167 <strike>₱258</strike> -35%'
+        },
+        {
+          id: 7,
+          image: 'img/s&a7.png',
+          title: 'Chain<br>Print<br>Bandana',
+          price: '₱ 126 <strike>₱194</strike> -35%'
+        },
+        {
+          id: 8,
+          image: 'img/s&a8.png',
+          title: 'Bow<br>Decor<br>Hair<br>Clip',
+          price: '₱ 45'
+        },
+        {
+          id: 9,
+          image: 'img/s&a9.png',
+          title: 'Smart Watch',
+          price: '₱ 66 <strike>₱102</strike> -35%'
+        },
+        {
+          id: 10,
+          image: 'img/s&a10.png',
+          title: 'Bow Decor Hair Claw',
+          price: '₱ 55 <strike>₱34</strike> -35%'
+        },
+        {
+          id: 11,
+          image: 'img/s&a11.png',
+          title: 'Women Minimalist Flip Flops, Plastic Fashion Flip Flops Black',
+          price: '₱ 427 <strike>₱494</strike> -14%'
+        },
+        {
+          id: 12,
+          image: 'img/s&a12.png',
+          title: 'Plastic Fashion Flip Flops Sandal',
+          price: '₱ 427 <strike>₱494</strike> -14%'
+        },
+        {
+          id: 13,
+          image: 'img/s&a13.png',
+          title: 'Colorblock High Top Skate Shoes',
+          price: '₱ 1,127 <strike>₱1,304</strike> -14%'
+        },
+        {
+          id: 14,
+          image: 'img/s&a14.png',
+          title: 'Women Color Block Breathable Mesh Lace-Up Front Chunky Sneakers',
+          price: '₱ 1,127 <strike>₱1,304</strike> -14%'
+        },
+        {
+          id: 15,
+          image: 'img/s&a15.png',
+          title: 'Tie Leg Design Chunky Heeled Strappy Sandals',
+          price: '₱ 932 <strike>₱1,079</strike> -14%'
+        },
+        {
+          id: 16,
+          image: 'img/s&a16.png',
+          title: 'Letter Detail<br>ace-up<br>Front Skate<br>Shoes',
+          price: '₱ 1200 <strike>₱1,390</strike> -14%'
+        },
 
-        // Get the select element
-            const categorySelect = document.getElementById('categorySelect');
+      ]
+      const categories = [...new Set(product.map((item) => { return item }))]
 
-        // Add a click event listener to the select element
-            categorySelect.addEventListener('change', () => {
+      let img = document.getElementById('root')
+      img.innerHTML = categories.map((item) => {
+        var { image, title, price } = item;
+        return (
+          `<div class="box">
+                <div class="img-box">
+                    <img src=${image}></img>
+                </div>
+                <div class="left">
+                    <p>${title}</p>
+                    <h2>${price}</h2>
+                    <button>Add to Cart</button>    
+                </div>
+            </div>`)
+      }).join('')
+
+      // Get the select element
+      const categorySelect = document.getElementById('categorySelect');
+
+      // Add a click event listener to the select element
+      categorySelect.addEventListener('change', () => {
         // Get the selected option's value
-            const selectedOption = categorySelect.value;
+        const selectedOption = categorySelect.value;
 
         // Navigate to the selected HTML file
-            window.location.href = selectedOption;
-        });
-        // Get the menu button and the navigation element
-            const menuBtn = document.querySelector('.menu-btn');
-            const nav = document.querySelector('nav');
+        window.location.href = selectedOption;
+      });
+      // Get the menu button and the navigation element
+      const menuBtn = document.querySelector('.menu-btn');
+      const nav = document.querySelector('nav');
 
-        // Add a click event listener to the menu button
-            menuBtn.addEventListener('click', () => {
+      // Add a click event listener to the menu button
+      menuBtn.addEventListener('click', () => {
         // Toggle the active class on the navigation element
-            nav.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+    </script>
+
+
+    <script>
+      // Array to store the items in the cart
+      const cartItems = [];
+
+      // Function to add an item to the cart
+      function addToCart(item) {
+        // Add the item to the cartItems array
+        cartItems.push(item);
+
+        // Call the updateCart function to update the sidebar
+        updateCart();
+      }
+
+      // Function to remove an item from the cart
+      function removeFromCart(index) {
+        // Remove the item from the cartItems array at the specified index
+        cartItems.splice(index, 1);
+
+        // Call the updateCart function to update the sidebar
+        updateCart();
+      }
+      // Function to update the cart in the sidebar
+      function updateCart() {
+        const cartElement = document.querySelector('.cart-item');
+        const totalElement = document.getElementById('total');
+
+        // Clear the existing cart items in the sidebar
+        cartElement.innerHTML = '';
+
+        // If the cart is empty, display a message
+        if (cartItems.length === 0) {
+          cartElement.textContent = 'Your cart is empty';
+          totalElement.textContent = '₱ 0.00';
+          return;
+        }
+
+        let totalAmount = 0;
+
+        // Iterate over the cartItems array and create HTML elements for each item
+        cartItems.forEach((item, index) => {
+          const cartItemElement = document.createElement('div');
+          cartItemElement.classList.add('cart-item-row');
+
+          const itemImageElement = document.createElement('img');
+          itemImageElement.src = item.image;
+          itemImageElement.alt = item.title;
+          itemImageElement.classList.add('cart-item-image');
+          itemImageElement.style.width = '50px'; // Adjust the width to your desired size
+
+          const itemTitleElement = document.createElement('p');
+          itemTitleElement.innerHTML = item.title;
+          itemTitleElement.classList.add('cart-item-title');
+
+          const itemPriceElement = document.createElement('p');
+          const price = item.price.match(/\d+/); // Extract the first amount from the price using regex
+          itemPriceElement.innerHTML = `₱ ${price}`;
+          itemPriceElement.classList.add('cart-item-price');
+
+          const removeButtonElement = document.createElement('button');
+          removeButtonElement.textContent = 'Remove';
+          removeButtonElement.classList.add('cart-item-remove');
+
+          // Add a click event listener to the remove button to remove the item from the cart
+          removeButtonElement.addEventListener('click', () => {
+            removeFromCart(index);
+          });
+
+          // Append the elements to the cartItemElement
+          cartItemElement.appendChild(itemImageElement);
+          cartItemElement.appendChild(itemTitleElement);
+          cartItemElement.appendChild(itemPriceElement);
+          cartItemElement.appendChild(removeButtonElement);
+
+          // Append the cartItemElement to the cartElement
+          cartElement.appendChild(cartItemElement);
+
+          // Calculate the total amount
+          const numericPrice = parseFloat(price);
+          totalAmount += numericPrice;
         });
-           </script>
+
+        // Update the total amount in the sidebar
+        totalElement.textContent = '₱ ' + totalAmount.toFixed(2);
+      }
+
+
+      // Add click event listeners to the "Add to Cart" buttons
+      const addToCartButtons = document.querySelectorAll('.left button');
+      addToCartButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          addToCart(product[index]);
+        });
+      });
+
+    </script>
+
+
+    <script src="addtocart.js"></script>
+
 </body>
+
 </html>

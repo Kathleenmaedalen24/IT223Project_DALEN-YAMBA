@@ -1,272 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-    <link rel="stylesheet" href="products.css">
 
-    <title>Document</title>
-    <style>
-    
-      /* FOOTER */
-      .container-2{
-        max-width: 73.125rem;
-        margin:auto;
-      }
-      
-       .row{
-        display: flex;
-        flex-wrap: wrap;
-      }
-      
-       ul{
-        list-style: none;
-      }
-      .footer{
-        background-color: #D3D3D3;
-        padding: 4.375rem 0;
-      }
-      
-      .footer-col{
-        width: 25%;
-        padding: 0 0.938rem ;
-      }
-      
-      .footer-col h4{
-        font-size: 1.125rem;
-        color: black;
-        text-transform: capitalize;
-        margin-bottom: 2.188rem;
-        font-weight: 500;
-        position: relative;
-        display: column;
-        
-      }
-      
-      .footer-col h4::before{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        background-color: #e91e63;
-        height: 0.125rem;
-        box-sizing: border-box;
-        width: 3.125rem;
-      }
-      
-      .footer-col ul li:not(:last-child){
-        margin-bottom: 0.625rem;
-      }
-      
-      .footer-col ul li a{
-        font-size: 1rem;
-        text-transform: capitalize;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 300;
-        color:  black;
-        display: block;
-        transition: all 0.3s ease;
-      }
-      
-      .footer-col ul li a:hover{
-        color: goldenrod;
-        padding-left: 0.625;
-      }
-      
-      .footer-col .social-links a{
-        display: inline-block;
-        height: 2rem;
-        width: 2.5rem;
-        background-color: rgba(255,255,255,0.2);
-        margin-right: 0 0.630rem 630rem 0;
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="products.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    /* FOOTER */
+    .product-categories {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 10em;
+    }
+
+    .dropdown {
+      width: 130px;
+      text-align: center;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 70em;
+    }
+
+    .container-2 {
+      max-width: 73.125rem;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .footer {
+      background-color: #D3D3D3;
+      padding: 4.375rem 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 0.938rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.125rem;
+      color: black;
+      text-transform: capitalize;
+      margin-bottom: 2.188rem;
+      font-weight: 500;
+      position: relative;
+      display: column;
+
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 0.125rem;
+      box-sizing: border-box;
+      width: 3.125rem;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 0.625rem;
+    }
+
+    .footer-col ul li a {
+      font-size: 1rem;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: black;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: goldenrod;
+      padding-left: 0.625;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 2rem;
+      width: 2.5rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-right: 0 0.630rem 630rem 0;
+      text-align: center;
+      line-height: 2.5rem;
+      border-radius: 50%;
+      color: black;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: goldenrod;
+      background-color: #ffffff;
+    }
+
+
+
+    @media(max-width: 767px) {
+      footer {
         text-align: center;
-        line-height: 2.5rem;
-        border-radius: 50%;
-        color: black;
-        transition: all 0.5s ease;
       }
-      
-      .footer-col .social-links a:hover{
-        color: goldenrod;
-        background-color: #ffffff;
+
+      .footer-col h4::before {
+        left: 9rem;
+        width: 25%;
       }
-      
-      
-      
-      @media(max-width: 767px) {
-        footer {
-          text-align: center;
-          }
-      
-          .footer-col h4::before{
-          left: 9rem;
-          width: 25%;
-          }
-      
-          .footer-col{
-          width: 100%;
-          margin-bottom: 30px;
-          }
+
+      .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
       }
-        </style>
+    }
+  </style>
+  <title>Document</title>
+
 </head>
+
 <body>
-  <div class="products-tops">
+  <div class="product-dress">
     <div class="navbar">
-        <div class="logo">
-          <a href="index.html"><img src="img/logo1.jpg" /></a>
-        </div>
-        <nav>
-          <a href="index.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-          <a href="services.html">SERVICES</a>
-          <a href="blog.html">BLOGS</a>
-          <a href="contact.html">CONTACT</a>
-        </nav>
-        <div class="icon">
-          <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
-          <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </div>
+      <div class="logo">
+        <a href="index.html"><img src="img/logo2 (2).jpg" /></a>
+      </div>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="blog.html">BLOGS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="icon">
+        <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
+        <a href="checkout.html"><ion-icon name="cart-outline"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="product-categories">
+      <div class="dropdown">
+        <select id="categorySelect">
+          <option value="default">SORT BY</option>
+          <option value="dress.html">Dress</option>
+          <option value="tops.html">Tops</option>
+          <option value="bottom.html">Bottoms</option>
+          <option value="sa.html">Shoes and Accessories</option>
+        </select>
       </div>
 
-      <div class="product-categories">
-        <div class="dropdown">
-            <select id="categorySelect">
-                <option value="dress.html">Dress</option>
-                <option value="tops.html">Tops</option>
-                <option value="bottom.html">Bottoms</option>
-                <option value="sa.html">Shoes and Accessories</option>
-              </select>
+      <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+          <div class="sidebar-head">
+            <p>My Cart</p>
+          </div>
+          <div class="cart-item">Your cart is empty</div>
+          <div class="foot">
+            <h3>Total</h3>
+            <h2 id="total">₱ 0.00</h2>
+          </div>
         </div>
-      
-        <div class="container">
-            <div id="root"></div>
-            <div class="sidebar">sidebar</div>  
-        </div>
-  </div>
-        <footer class="footer">
-          <div class="container-2">
-            <div class="row">
-              <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Our services</a></li>
-                  <li><a href="#">Privacy policy</a></li>
-                  <li><a href="#">Affiliate program</a></li>
-                </ul>
-              </div>
-              <div class="footer-col">
-                <h4>Get help</h4>
-                <ul>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">Returns</a></li>
-                  <li><a href="#">Order Status</a></li>
-                  <li><a href="#">Payment Options</a></li>
-                </ul>
-              </div>
-              <div class="footer-col">
-                <h4>Follow us</h4>
-                <div class="social-links">
-                  <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                  <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                </div>
-              </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-2">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Our services</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Order Status</a></li>
+              <li><a href="#">Payment Options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
           </div>
-        </footer>
-        <script>
-            const product = [
-                {
-                    id: 1,
-                    image: 'img/tops1.png',
-                    title: 'DAZY Asymmetrical Neck Split<br>Sleeve Ribbed Knit Tee',
-                    price: '₱ 290 <strike>₱468</strike> -38%'
-                },
-                {
-                    id: 2,
-                    image: 'img/tops.png',
-                    title: 'Square tops',
-                    price: '₱ 321 <strike>₱455</strike> -29%'
-                },
-                {
-                    id: 3,
-                    image: 'img/tops2.png',
-                    title: 'SXY Solid Bishop Sleeve Tee',
-                    price: '₱ 440 <strike>₱623</strike> -29%'
-                },
-                {
-                    id: 4,
-                    image: 'img/tops3.png',
-                    title: 'V top zipper',
-                    price: '₱ 374 <strike>₱529</strike> -29%'
-                },
-                {
-                    id: 5,
-                    image: 'img/tops4.png',
-                    title: 'EZwear Square Neck<br>Flounce Sleeve Crop Tee',
-                    price: '₱ 321 <strike>₱455</strike> -29%'
-                },
-                {
-                    id: 6,
-                    image: 'img/tops5.png',
-                    title: 'Unity Ruched Knot<br>Back Crop Blouse',
-                    price: '₱ 374 <strike>₱529</strike> -29%'
-                },
-                
-            ]
-            const categories = [...new Set(product.map((item)=>
-           {return item}))]
-    
-           let img = document.getElementById('root')
-           img.innerHTML = categories.map((item)=>
-           {
-            var {image, title, price} = item;
-               return(
-               `<div class="box">
-                    <div class="img-box">
-                        <img src=${image}></img>
-                    </div>
-                    <div class="left">
-                        <p>${title}</p>
-                        <h2>${price}</h2>
-                        <button>Add to Cart</button>    
-                    </div>
-                </div>`)
-           }).join('')
+        </div>
+      </div>
+    </footer>
 
-         // Get the select element
-            const categorySelect = document.getElementById('categorySelect');
+    <script>
+      const product = [
+        {
+          id: 1,
+          image: 'img/tops1.png',
+          title: 'DAZY Asymmetrical Neck Split<br>Sleeve Ribbed Knit Tee',
+          price: '₱ 290 <strike>₱468</strike> -38%'
+        },
+        {
+          id: 2,
+          image: 'img/tops.png',
+          title: 'Square tops',
+          price: '₱ 321 <strike>₱455</strike> -29%'
+        },
+        {
+          id: 3,
+          image: 'img/tops2.png',
+          title: 'SXY Solid Bishop Sleeve Tee',
+          price: '₱ 440 <strike>₱623</strike> -29%'
+        },
+        {
+          id: 4,
+          image: 'img/tops3.png',
+          title: 'V top zipper',
+          price: '₱ 374 <strike>₱529</strike> -29%'
+        },
+        {
+          id: 5,
+          image: 'img/tops4.png',
+          title: 'EZwear Square Neck<br>Flounce Sleeve Crop Tee',
+          price: '₱ 321 <strike>₱455</strike> -29%'
+        },
+        {
+          id: 6,
+          image: 'img/tops5.png',
+          title: 'Unity Ruched Knot<br>Back Crop Blouse',
+          price: '₱ 374 <strike>₱529</strike> -29%'
+        },
 
-        // Add a click event listener to the select element
-            categorySelect.addEventListener('change', () => {
+      ]
+      const categories = [...new Set(product.map((item) => { return item }))]
+
+      let img = document.getElementById('root')
+      img.innerHTML = categories.map((item) => {
+        var { image, title, price } = item;
+        return (
+          `<div class="box">
+                <div class="img-box">
+                    <img src=${image}></img>
+                </div>
+                <div class="left">
+                    <p>${title}</p>
+                    <h2>${price}</h2>
+                    <button>Add to Cart</button>    
+                </div>
+            </div>`)
+      }).join('')
+
+      // Get the select element
+      const categorySelect = document.getElementById('categorySelect');
+
+      // Add a click event listener to the select element
+      categorySelect.addEventListener('change', () => {
         // Get the selected option's value
-            const selectedOption = categorySelect.value;
+        const selectedOption = categorySelect.value;
 
         // Navigate to the selected HTML file
-            window.location.href = selectedOption;
-        });
-        // Get the menu button and the navigation element
-            const menuBtn = document.querySelector('.menu-btn');
-            const nav = document.querySelector('nav');
+        window.location.href = selectedOption;
+      });
+      // Get the menu button and the navigation element
+      const menuBtn = document.querySelector('.menu-btn');
+      const nav = document.querySelector('nav');
 
-        // Add a click event listener to the menu button
-            menuBtn.addEventListener('click', () => {
+      // Add a click event listener to the menu button
+      menuBtn.addEventListener('click', () => {
         // Toggle the active class on the navigation element
-            nav.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+    </script>
+
+
+    <script>
+      // Array to store the items in the cart
+      const cartItems = [];
+
+      // Function to add an item to the cart
+      function addToCart(item) {
+        // Add the item to the cartItems array
+        cartItems.push(item);
+
+        // Call the updateCart function to update the sidebar
+        updateCart();
+      }
+
+      // Function to remove an item from the cart
+      function removeFromCart(index) {
+        // Remove the item from the cartItems array at the specified index
+        cartItems.splice(index, 1);
+
+        // Call the updateCart function to update the sidebar
+        updateCart();
+      }
+      // Function to update the cart in the sidebar
+      function updateCart() {
+        const cartElement = document.querySelector('.cart-item');
+        const totalElement = document.getElementById('total');
+
+        // Clear the existing cart items in the sidebar
+        cartElement.innerHTML = '';
+
+        // If the cart is empty, display a message
+        if (cartItems.length === 0) {
+          cartElement.textContent = 'Your cart is empty';
+          totalElement.textContent = '₱ 0.00';
+          return;
+        }
+
+        let totalAmount = 0;
+
+        // Iterate over the cartItems array and create HTML elements for each item
+        cartItems.forEach((item, index) => {
+          const cartItemElement = document.createElement('div');
+          cartItemElement.classList.add('cart-item-row');
+
+          const itemImageElement = document.createElement('img');
+          itemImageElement.src = item.image;
+          itemImageElement.alt = item.title;
+          itemImageElement.classList.add('cart-item-image');
+          itemImageElement.style.width = '50px'; // Adjust the width to your desired size
+
+          const itemTitleElement = document.createElement('p');
+          itemTitleElement.innerHTML = item.title;
+          itemTitleElement.classList.add('cart-item-title');
+
+          const itemPriceElement = document.createElement('p');
+          const price = item.price.match(/\d+/); // Extract the first amount from the price using regex
+          itemPriceElement.innerHTML = `₱ ${price}`;
+          itemPriceElement.classList.add('cart-item-price');
+
+          const removeButtonElement = document.createElement('button');
+          removeButtonElement.textContent = 'Remove';
+          removeButtonElement.classList.add('cart-item-remove');
+
+          // Add a click event listener to the remove button to remove the item from the cart
+          removeButtonElement.addEventListener('click', () => {
+            removeFromCart(index);
+          });
+
+          // Append the elements to the cartItemElement
+          cartItemElement.appendChild(itemImageElement);
+          cartItemElement.appendChild(itemTitleElement);
+          cartItemElement.appendChild(itemPriceElement);
+          cartItemElement.appendChild(removeButtonElement);
+
+          // Append the cartItemElement to the cartElement
+          cartElement.appendChild(cartItemElement);
+
+          // Calculate the total amount
+          const numericPrice = parseFloat(price);
+          totalAmount += numericPrice;
         });
-           </script>
+
+        // Update the total amount in the sidebar
+        totalElement.textContent = '₱ ' + totalAmount.toFixed(2);
+      }
+
+
+      // Add click event listeners to the "Add to Cart" buttons
+      const addToCartButtons = document.querySelectorAll('.left button');
+      addToCartButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          addToCart(product[index]);
+        });
+      });
+
+    </script>
+
+
+    <script src="addtocart.js"></script>
+
 </body>
+
 </html>

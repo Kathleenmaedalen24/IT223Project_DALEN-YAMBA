@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    #cart-items {
+      margin-bottom: 20px;
+    }
+
+    #total-section {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    #total-section h2 {
+      margin-right: 10px;
+    }
+
+    #total-amount {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #f5f5f5;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Cart</h1>
+  </header>
+  <main>
+    <div id="cart"></div>
+    <div id="sidebar">
+      <h2>Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="total-amount"></p>
+    </div>
+    <div id="cart-container"></div>
+    <div id="cart-items"></div>
+    <div id="total-section">
+      <h2>Total</h2>
+      <h3 id="total-amount">$0.00</h3>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </footer>
+  <script>
+    const product = [
+      {
+        id: 1,
+        image: 'img/dress1.png',
+        title: 'Honeyspot Solid Square Neck Ruched <br> Ruffle Hem Ribbed Dress',
+        price: '₱ 717 <strike>₱937</strike> -24%'
+      },
+      // ... rest of the products
+    ];
+
+    // Function to add a product to the cart
+    function addToCart(item) {
+      // Get the cart element
+      const cart = document.getElementById('cart');
+
+      // Create a new div to display the selected product
+      const selectedProduct = document.createElement('div');
+      selectedProduct.innerHTML = `
+    <div class="box">
+      <div class="img-box">
+        <img src=${item.image}></img>
+      </div>
+      <div class="left">
+        <p>${item.title}</p>
+        <h2>${item.price}</h2>
+      </div>
+    </div>
+  `;
+
+      // Append the selected product to the cart
+      cart.appendChild(selectedProduct);
+    }
+
+    // Function to render the products on the initial page load
+    function renderProducts() {
+      const img = document.getElementById('root');
+      img.innerHTML = product
+        .map((item) => {
+          return `
+        <div class="box">
+          <div class="img-box">
+            <img src=${item.image}></img>
+          </div>
+          <div class="left">
+            <p>${item.title}</p>
+            <h2>${item.price}</h2>
+            <button onclick="addToCart(${JSON.stringify(item)})">Add to Cart</button>
+          </div>
+        </div>
+      `;
+        })
+        .join('');
+    }
+
+    // Render the products on the initial page load
+    renderProducts();
+
+  </script>
+  <!-- <script>
+        // Retrieve the cart items from local storage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Get the cart-items container
+        const cartItemsContainer = document.getElementById('cart-items');
+
+        // Clear the existing cart items in the container
+        cartItemsContainer.innerHTML = '';
+
+        // If the cart is empty, display a message
+        if (cartItems.length === 0) {
+            const emptyCartElement = document.createElement('p');
+            emptyCartElement.textContent = 'Your cart is empty';
+            cartItemsContainer.appendChild(emptyCartElement);
+        } else {
+            // Iterate over the cart items and create elements for each item
+            cartItems.forEach(item => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+
+                const itemTitleElement = document.createElement('h3');
+                itemTitleElement.textContent = item.title;
+
+                const itemPriceElement = document.createElement('p');
+                itemPriceElement.textContent = item.price;
+
+                cartItemElement.appendChild(itemTitleElement);
+                cartItemElement.appendChild(itemPriceElement);
+
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+        }
+
+        // Calculate the total amount
+        const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+
+        // Update the total amount in the HTML
+        const totalAmountElement = document.getElementById('total-amount');
+        totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
+    </script>
+
+<script>
+    // Function to retrieve cart items from URL query parameters
+    function getCartItemsFromURL() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const cartItemsParam = urlParams.get('cartItems');
+  
+      return cartItemsParam ? JSON.parse(cartItemsParam) : [];
+    }
+  
+    // Function to display cart items
+    function displayCartItems() {
+      const cartItems = getCartItemsFromURL();
+      const cartContainer = document.getElementById('cart-container');
+      let totalAmount = 0;
+  
+      // Clear existing content
+      cartContainer.innerHTML = '';
+  
+      // Display each cart item
+      cartItems.forEach(function(item) {
+        const cartItemElement = document.createElement('div');
+        cartItemElement.textContent = item.name + ' - $' + item.price;
+        cartContainer.appendChild(cartItemElement);
+  
+        totalAmount += item.price;
+      });
+  
+      // Display total amount
+      const totalAmountElement = document.createElement('div');
+      totalAmountElement.textContent = 'Total Amount: $' + totalAmount.toFixed(2);
+      cartContainer.appendChild(totalAmountElement);
+    }
+  
+    // Call the displayCartItems function when the page loads
+    window.onload = function() {
+      displayCartItems();
+    };
+  </script>
+
+<script>
+    // Function to retrieve cart items from local storage
+    function getCartItems() {
+      const cartItems = localStorage.getItem('cartItems');
+      return cartItems ? JSON.parse(cartItems) : [];
+    }
+  
+    // Function to display cart items on the sidebar
+    function displayCartItems() {
+      const cartItems = getCartItems();
+      const cartItemsList = document.getElementById('cart-items');
+      const totalAmountElement = document.getElementById('total-amount');
+      let totalAmount = 0;
+  
+      // Clear existing content
+      cartItemsList.innerHTML = '';
+  
+      // Display each cart item
+      cartItems.forEach(function(item) {
+        const listItem = document.createElement('li');
+        listItem.textContent = item.name + ' - $' + item.price;
+        cartItemsList.appendChild(listItem);
+  
+        totalAmount += item.price;
+      });
+  
+      // Display total amount
+      totalAmountElement.textContent = 'Total Amount: $' + totalAmount.toFixed(2);
+    }
+  
+    // Call the displayCartItems function when the page loads
+    window.onload = function() {
+      displayCartItems();
+    };
+  </script> -->
+
+</body>
+
+</html>
