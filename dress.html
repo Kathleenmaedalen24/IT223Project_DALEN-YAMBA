@@ -9,7 +9,6 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
-    /* FOOTER */
     .product-categories {
       display: flex;
       align-items: center;
@@ -57,7 +56,6 @@
       font-weight: 500;
       position: relative;
       display: column;
-
     }
 
     .footer-col h4::before {
@@ -109,7 +107,7 @@
       background-color: #ffffff;
     }
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       footer {
         text-align: center;
       }
@@ -123,8 +121,62 @@
         width: 100%;
         margin-bottom: 30px;
       }
+
+      /* Product Categories */
+      .product-categories {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 0;
+        margin-bottom: 2em;
+      }
+
+      .dropdown {
+        margin-bottom: 1em;
+      }
+
+      .container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #root {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      .box {
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 1em;
+      }
+
+      .img-box {
+        width: 100%;
+        height: auto;
+      }
+
+      .left {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+      }
+
+      img {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        display: block;
+        width: 90%;
+        margin-top: 10px;
+        /* position: fixed; */
+        bottom: 0;
+      }
     }
-  </style>
+</style>
+
   <title>Document</title>
 
 </head>
@@ -170,7 +222,6 @@
           <div class="foot">
             <h3>Total</h3>
             <h2 id="total">₱ 0.00</h2>
-            <button id="checkoutButton">Checkout</button>
           </div>
         </div>
       </div>
@@ -181,8 +232,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Our services</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Our services</a></li>
               <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Affiliate program</a></li>
             </ul>
@@ -194,15 +245,15 @@
               <li><a href="#">Shipping</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Order Status</a></li>
-              <li><a href="#">Payment Options</a></li>
+              <li><a href="payment-form.html">Payment Options</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Follow us</h4>
             <div class="social-links">
-              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="https://www.facebook.com/kathleenmae.dalen"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="https://twitter.com/home"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="https://www.instagram.com/kath_ziah/"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
           </div>
         </div>
@@ -289,41 +340,41 @@
         nav.classList.toggle('active');
       });
 
-      
+
     </script>
 
-    
+
     <script>
-   // Retrieve the cartItems from local storage or set it to an empty array
-   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      // Retrieve the cartItems from local storage or set it to an empty array
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-// Function to save the cartItems to local storage
-function saveCartItems() {
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-}
+      // Function to save the cartItems to local storage
+      function saveCartItems() {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }
 
-// Function to add an item to the cart
-function addToCart(item) {
-  cartItems.push(item);
-  saveCartItems();
-  updateCart();
-}
+      // Function to add an item to the cart
+      function addToCart(item) {
+        cartItems.push(item);
+        saveCartItems();
+        updateCart();
+      }
 
-// Function to remove an item from the cart
-function removeFromCart(index) {
-  cartItems.splice(index, 1);
-  saveCartItems();
-  updateCart();
-}
+      // Function to remove an item from the cart
+      function removeFromCart(index) {
+        cartItems.splice(index, 1);
+        saveCartItems();
+        updateCart();
+      }
 
-// Function to update the cart in the sidebar
-function updateCart() {
-  const cartElement = document.querySelector('.cart-item');
-  const totalElement = document.getElementById('total');
+      // Function to update the cart in the sidebar
+      function updateCart() {
+        const cartElement = document.querySelector('.cart-item');
+        const totalElement = document.getElementById('total');
 
-  
-  saveCartItems(); // Save the cartItems after updating the cart
-    
+
+        saveCartItems(); // Save the cartItems after updating the cart
+
         // Clear the existing cart items in the sidebar
         cartElement.innerHTML = '';
 
@@ -345,7 +396,9 @@ function updateCart() {
           itemImageElement.src = item.image;
           itemImageElement.alt = item.title;
           itemImageElement.classList.add('cart-item-image');
-          itemImageElement.style.width = '50px'; // Adjust the width to your desired size
+          itemImageElement.style.width = '70px'; 
+          itemImageElement.style.marginTop = '8px';
+          itemImageElement.style.marginRight = '25px';
 
           const itemTitleElement = document.createElement('p');
           itemTitleElement.innerHTML = item.title;
@@ -386,14 +439,14 @@ function updateCart() {
 
       // Add click event listeners to the "Add to Cart" buttons
       const addToCartButtons = document.querySelectorAll('.left button');
-    addToCartButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        addToCart(product[index]);
+      addToCartButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          addToCart(product[index]);
+        });
       });
-    });
 
-    // Call the updateCart function when the page loads to display the saved cart items
-    updateCart();
+      // Call the updateCart function when the page loads to display the saved cart items
+      updateCart();
 
     </script>
     <script>
@@ -403,12 +456,9 @@ function updateCart() {
         // Redirect to the payment-form.html page
         window.location.href = 'payment-form.html';
       });
-      
+
 
     </script>
-
-
-    <script src="addtocart.js"></script>
 
 </body>
 

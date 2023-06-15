@@ -24,7 +24,6 @@
       margin-bottom: 160em;
     }
 
-    /* FOOTER */
     .container-2 {
       max-width: 73.125rem;
       margin: auto;
@@ -57,7 +56,6 @@
       font-weight: 500;
       position: relative;
       display: column;
-
     }
 
     .footer-col h4::before {
@@ -109,9 +107,7 @@
       background-color: #ffffff;
     }
 
-
-
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       footer {
         text-align: center;
       }
@@ -125,12 +121,6 @@
         width: 100%;
         margin-bottom: 30px;
       }
-    }
-
-    /* Add this CSS code at the end of your existing CSS code */
-
-    @media screen and (max-width: 767px) {
-
 
       /* Product Categories */
       .product-categories {
@@ -154,10 +144,6 @@
         margin-bottom: 1em;
       }
 
-      .sidebar {
-        display: none;
-      }
-
       .box {
         flex-direction: column;
         padding: 10px;
@@ -178,6 +164,15 @@
       img {
         max-width: 100%;
         margin-left: 0;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        display: block;
+        width: 90%;
+        margin-top: 10px;
+        /* position: fixed; */
+        bottom: 0;
       }
     }
   </style>
@@ -200,7 +195,7 @@
       </nav>
       <div class="icon">
         <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
-        <a href="checkout.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
       </div>
     </div>
 
@@ -235,8 +230,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Our services</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Our services</a></li>
               <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Affiliate program</a></li>
             </ul>
@@ -248,7 +243,7 @@
               <li><a href="#">Shipping</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Order Status</a></li>
-              <li><a href="#">Payment Options</a></li>
+              <li><a href="payment-form.html">Payment Options</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -401,34 +396,41 @@
         // Toggle the active class on the navigation element
         nav.classList.toggle('active');
       });
+
+
     </script>
 
 
     <script>
-      // Array to store the items in the cart
-      const cartItems = [];
+      // Retrieve the cartItems from local storage or set it to an empty array
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Function to save the cartItems to local storage
+      function saveCartItems() {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }
 
       // Function to add an item to the cart
       function addToCart(item) {
-        // Add the item to the cartItems array
         cartItems.push(item);
-
-        // Call the updateCart function to update the sidebar
+        saveCartItems();
         updateCart();
       }
 
       // Function to remove an item from the cart
       function removeFromCart(index) {
-        // Remove the item from the cartItems array at the specified index
         cartItems.splice(index, 1);
-
-        // Call the updateCart function to update the sidebar
+        saveCartItems();
         updateCart();
       }
+
       // Function to update the cart in the sidebar
       function updateCart() {
         const cartElement = document.querySelector('.cart-item');
         const totalElement = document.getElementById('total');
+
+
+        saveCartItems(); // Save the cartItems after updating the cart
 
         // Clear the existing cart items in the sidebar
         cartElement.innerHTML = '';
@@ -451,7 +453,9 @@
           itemImageElement.src = item.image;
           itemImageElement.alt = item.title;
           itemImageElement.classList.add('cart-item-image');
-          itemImageElement.style.width = '50px'; // Adjust the width to your desired size
+          itemImageElement.style.width = '70px'; 
+          itemImageElement.style.marginTop = '8px';
+          itemImageElement.style.marginRight = '25px';
 
           const itemTitleElement = document.createElement('p');
           itemTitleElement.innerHTML = item.title;
@@ -498,10 +502,20 @@
         });
       });
 
+      // Call the updateCart function when the page loads to display the saved cart items
+      updateCart();
+
     </script>
+    <script>
+      // Add a click event listener to the checkout button
+      const checkoutButton = document.getElementById('checkoutButton');
+      checkoutButton.addEventListener('click', () => {
+        // Redirect to the payment-form.html page
+        window.location.href = 'payment-form.html';
+      });
 
 
-    <script src="addtocart.js"></script>
+    </script>
 
 </body>
 

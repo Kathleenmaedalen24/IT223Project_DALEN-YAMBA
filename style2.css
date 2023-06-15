@@ -524,7 +524,7 @@ aside h1 {
 .iconContact {
   margin-right: 10px;
   border-radius: 60%;
-  background-color: rgba(0, 0, 0, 0.50);
+  background-color: rgba(218, 165, 32, 0.192);
   width: 40px;
   height: 40px;
   display: flex;
@@ -534,23 +534,16 @@ aside h1 {
 
 .text {
   display: flex;
-  /* new */
   flex-direction: column;
-  /* new */
 }
 
 .text h3 {
   margin: 0;
-  /* remove default margin */
-
 }
 
 .text p {
   margin: 0;
-  /* remove default margin */
   font-size: 14px;
-  /* optional styling */
-
 }
 
 .header {

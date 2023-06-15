@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
+  <link rel="stylesheet" href="style2.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <title>Your Cart</title>
   <style>
-    /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-    }
-
     header {
-      background-color: #333;
-      color: #fff;
+      background-color: #D3D3D3;
+      color: black;
       padding: 20px;
       text-align: center;
     }
@@ -33,23 +22,60 @@
       padding: 20px;
     }
 
-    #cart-items {
+    .cart {
       margin-bottom: 20px;
     }
 
-    #total-section {
+    .cart-item-row {
       display: flex;
-      justify-content: flex-end;
       align-items: center;
+      margin-bottom: 10px;
     }
 
-    #total-section h2 {
+    .cart-item-image {
+      width: 50px;
       margin-right: 10px;
     }
 
-    #total-amount {
-      font-size: 24px;
+    .cart-item-title {
+      flex-grow: 1;
+    }
+
+    .cart-item-price {
+      margin-right: 10px;
+    }
+
+    .cart-item-remove {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #total {
+      font-size: 16px;
       font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #checkoutButton {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      background-color: black;
+      border: none;
+      color: #fff;
+      padding: 15px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #checkoutButton:hover {
+      background-color: goldenrod;
     }
 
     footer {
@@ -63,203 +89,146 @@
 </head>
 
 <body>
+  <div class="navbar" id="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="img/logo2 (2).jpg" /></a>
+    </div>
+    <nav>
+      <a href="index.html" class="active">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="services.html">SERVICES</a>
+      <a href="blog.html">BLOGS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="icon">
+      <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
+      <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+    </div>
+  </div>
   <header>
-    <h1>My Cart</h1>
+    <h1>Your Cart</h1>
   </header>
   <main>
-    <div id="cart"></div>
-    <div id="sidebar">
-      <h2>Cart</h2>
-      <ul id="cart-items"></ul>
-      <p id="total-amount"></p>
-    </div>
-    <div id="cart-container"></div>
-    <div id="cart-items"></div>
-    <div id="total-section">
-      <h2>Total</h2>
-      <h3 id="total-amount">$0.00</h3>
+    <div class="cart">
+      <div class="cart-item"></div>
+      <p id="total">Total: ₱ 0.00</p>
+      <button id="checkoutButton" onclick="redirectToPayment()">Checkout</button>
     </div>
   </main>
-  <footer>
-    <p>&copy; 2023 Your Company. All rights reserved.</p>
-  </footer>
-  <script>
-    const product = [
-      {
-        id: 1,
-        image: 'img/dress1.png',
-        title: 'Honeyspot Solid Square Neck Ruched <br> Ruffle Hem Ribbed Dress',
-        price: '₱ 717 <strike>₱937</strike> -24%'
-      },
-      // ... rest of the products
-    ];
-
-    // Function to add a product to the cart
-    function addToCart(item) {
-      // Get the cart element
-      const cart = document.getElementById('cart');
-
-      // Create a new div to display the selected product
-      const selectedProduct = document.createElement('div');
-      selectedProduct.innerHTML = `
-    <div class="box">
-      <div class="img-box">
-        <img src=${item.image}></img>
-      </div>
-      <div class="left">
-        <p>${item.title}</p>
-        <h2>${item.price}</h2>
-      </div>
-    </div>
-  `;
-
-      // Append the selected product to the cart
-      cart.appendChild(selectedProduct);
-    }
-
-    // Function to render the products on the initial page load
-    function renderProducts() {
-      const img = document.getElementById('root');
-      img.innerHTML = product
-        .map((item) => {
-          return `
-        <div class="box">
-          <div class="img-box">
-            <img src=${item.image}></img>
-          </div>
-          <div class="left">
-            <p>${item.title}</p>
-            <h2>${item.price}</h2>
-            <button onclick="addToCart(${JSON.stringify(item)})">Add to Cart</button>
+  <footer class="footer">
+    <div class="container-2">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Our services</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="payment-form.html">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow us</h4>
+          <div class="social-links">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
           </div>
         </div>
-      `;
-        })
-        .join('');
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Retrieve the cartItems from local storage or set it to an empty array
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Function to save the cartItems to local storage
+    function saveCartItems() {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }
 
-    // Render the products on the initial page load
-    renderProducts();
-
-  </script>
-  <!-- <script>
-        // Retrieve the cart items from local storage
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-        // Get the cart-items container
-        const cartItemsContainer = document.getElementById('cart-items');
-
-        // Clear the existing cart items in the container
-        cartItemsContainer.innerHTML = '';
-
-        // If the cart is empty, display a message
-        if (cartItems.length === 0) {
-            const emptyCartElement = document.createElement('p');
-            emptyCartElement.textContent = 'Your cart is empty';
-            cartItemsContainer.appendChild(emptyCartElement);
-        } else {
-            // Iterate over the cart items and create elements for each item
-            cartItems.forEach(item => {
-                const cartItemElement = document.createElement('div');
-                cartItemElement.classList.add('cart-item');
-
-                const itemTitleElement = document.createElement('h3');
-                itemTitleElement.textContent = item.title;
-
-                const itemPriceElement = document.createElement('p');
-                itemPriceElement.textContent = item.price;
-
-                cartItemElement.appendChild(itemTitleElement);
-                cartItemElement.appendChild(itemPriceElement);
-
-                cartItemsContainer.appendChild(cartItemElement);
-            });
-        }
-
-        // Calculate the total amount
-        const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
-
-        // Update the total amount in the HTML
-        const totalAmountElement = document.getElementById('total-amount');
-        totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
-    </script>
-
-<script>
-    // Function to retrieve cart items from URL query parameters
-    function getCartItemsFromURL() {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const cartItemsParam = urlParams.get('cartItems');
-  
-      return cartItemsParam ? JSON.parse(cartItemsParam) : [];
+    // Function to remove an item from the cart and update the cart in the sidebar
+    function removeFromCart(index) {
+      cartItems.splice(index, 1);
+      saveCartItems();
+      updateCart();
     }
+
+    // Function to update the cart in the sidebar
+    function updateCart() {
+      const cartElement = document.querySelector('.cart-item');
+      const totalElement = document.getElementById('total');
+
+      // Clear the existing cart items in the sidebar
+      cartElement.innerHTML = '';
+
+      // If the cart is empty, display a message
+      if (cartItems.length === 0) {
+        cartElement.textContent = 'Your cart is empty';
+        totalElement.textContent = 'Total: ₱ 0.00';
+        checkoutButton.style.display = 'none';
+        return;
+      }
+      checkoutButton.style.display = 'block';
   
-    // Function to display cart items
-    function displayCartItems() {
-      const cartItems = getCartItemsFromURL();
-      const cartContainer = document.getElementById('cart-container');
       let totalAmount = 0;
-  
-      // Clear existing content
-      cartContainer.innerHTML = '';
-  
-      // Display each cart item
-      cartItems.forEach(function(item) {
+
+      // Iterate over the cartItems array and create HTML elements for each item
+      cartItems.forEach((item, index) => {
         const cartItemElement = document.createElement('div');
-        cartItemElement.textContent = item.name + ' - $' + item.price;
-        cartContainer.appendChild(cartItemElement);
-  
-        totalAmount += item.price;
+        cartItemElement.classList.add('cart-item-row');
+
+        const itemImageElement = document.createElement('img');
+        itemImageElement.src = item.image;
+        itemImageElement.alt = item.title;
+        itemImageElement.classList.add('cart-item-image');
+
+        const itemTitleElement = document.createElement('p');
+        itemTitleElement.innerHTML = item.title;
+        itemTitleElement.classList.add('cart-item-title');
+
+        const itemPriceElement = document.createElement('p');
+        const price = item.price.match(/\d+/); // Extract the first amount from the price using regex
+        itemPriceElement.innerHTML = `₱ ${price}`;
+        itemPriceElement.classList.add('cart-item-price');
+
+        const removeButton = document.createElement('button');
+        removeButton.innerHTML = 'Remove';
+        removeButton.classList.add('cart-item-remove');
+        removeButton.addEventListener('click', () => removeFromCart(index));
+
+        cartItemElement.appendChild(itemImageElement);
+        cartItemElement.appendChild(itemTitleElement);
+        cartItemElement.appendChild(itemPriceElement);
+        cartItemElement.appendChild(removeButton);
+
+        cartElement.appendChild(cartItemElement);
+
+        totalAmount += parseFloat(price);
       });
-  
-      // Display total amount
-      const totalAmountElement = document.createElement('div');
-      totalAmountElement.textContent = 'Total Amount: $' + totalAmount.toFixed(2);
-      cartContainer.appendChild(totalAmountElement);
+
+      totalElement.textContent = `Total: ₱ ${totalAmount.toFixed(2)}`;
     }
-  
-    // Call the displayCartItems function when the page loads
-    window.onload = function() {
-      displayCartItems();
-    };
+
+    // Function to redirect to the payment form
+    function redirectToPayment() {
+      window.location.href = 'payment-form.html';
+    }
+
+    // Call the updateCart function when the page loads
+    window.onload = updateCart();
   </script>
-
-<script>
-    // Function to retrieve cart items from local storage
-    function getCartItems() {
-      const cartItems = localStorage.getItem('cartItems');
-      return cartItems ? JSON.parse(cartItems) : [];
-    }
-  
-    // Function to display cart items on the sidebar
-    function displayCartItems() {
-      const cartItems = getCartItems();
-      const cartItemsList = document.getElementById('cart-items');
-      const totalAmountElement = document.getElementById('total-amount');
-      let totalAmount = 0;
-  
-      // Clear existing content
-      cartItemsList.innerHTML = '';
-  
-      // Display each cart item
-      cartItems.forEach(function(item) {
-        const listItem = document.createElement('li');
-        listItem.textContent = item.name + ' - $' + item.price;
-        cartItemsList.appendChild(listItem);
-  
-        totalAmount += item.price;
-      });
-  
-      // Display total amount
-      totalAmountElement.textContent = 'Total Amount: $' + totalAmount.toFixed(2);
-    }
-  
-    // Call the displayCartItems function when the page loads
-    window.onload = function() {
-      displayCartItems();
-    };
-  </script> -->
-
 </body>
 
 </html>

@@ -26,7 +26,7 @@
       </nav>
       <div class="icon">
         <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
-        <a href="checkout.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
       </div>
     </div>
     <div class="header">
@@ -39,22 +39,22 @@
         <h3 style="color:black; margin-bottom: 20px;">Contact Info:</h3>
         <div class="contactInfo">
           <div class="box">
-            <div class="iconContact"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></div>
+            <div class="iconContact"><a href="#"><ion-icon name="logo-facebook" style="color: black;"></ion-icon></a></div>
             <div class="text"></div>
             <h3 style="color:black;">Facebook</h3>
           </div>
           <div class="box">
-            <div class="iconContact"> <a href="#"><ion-icon name="logo-instagram"></ion-icon></a></div>
+            <div class="iconContact"> <a href="#"><ion-icon name="logo-instagram" style="color: black;"></ion-icon></a></div>
             <div class="text"></div>
             <h3 style="color: black;">Instagram</h3>
           </div>
           <div class="box">
-            <div class="iconContact"><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></div>
+            <div class="iconContact"><a href="#"><ion-icon name="logo-twitter" style="color: black;"></ion-icon></a></div>
             <div class="text"></div>
             <h3 style="color:black;">Twitter</h3>
           </div>
           <div class="box">
-            <div class="iconContact"><a href=""><ion-icon name="call-outline"></ion-icon></a></div>
+            <div class="iconContact"><a href=""><ion-icon name="call-outline" style="color: black;"></ion-icon></a></div>
             <div class="text"></div>
             <h3 style="color:black">Phone </h3>
             <p style="color:black">+639354700283</p>
@@ -89,8 +89,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Our services</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Our services</a></li>
               <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Affiliate program</a></li>
             </ul>
@@ -102,15 +102,15 @@
               <li><a href="#">Shipping</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Order Status</a></li>
-              <li><a href="#">Payment Options</a></li>
+              <li><a href="payment-form.html">Payment Options</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Follow us</h4>
             <div class="social-links">
-              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="https://www.facebook.com/kathleenmae.dalen"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="https://twitter.com/home"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="https://www.instagram.com/kath_ziah/"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
           </div>
         </div>
@@ -127,14 +127,13 @@
       var email = document.getElementById("email").value;
       var message = document.getElementById("message").value;
 
-      // Validate form fields (you can add your own validation logic here)
+      // Validate form fields 
       if (name === "" || email === "" || message === "") {
         alert("Please fill in all fields");
         return;
       }
 
-      // Process form data (you can send the data to a server-side script using AJAX or any other method)
-      // For demonstration, we'll just log the values to the console
+      // Process form data 
       console.log("Name: " + name);
       console.log("Email: " + email);
       console.log("Message: " + message);

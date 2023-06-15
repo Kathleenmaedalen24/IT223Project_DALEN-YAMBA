@@ -9,123 +9,172 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
-    /* FOOTER */
-    .product-categories {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-right: 10em;
-    }
+   .product-categories {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10em;
+}
 
-    .dropdown {
-      width: 130px;
-      text-align: center;
-      background-color: white;
-      border-radius: 3px;
-      margin-bottom: 70em;
-    }
+.dropdown {
+  width: 130px;
+  text-align: center;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 70em;
+}
 
-    .container-2 {
-      max-width: 73.125rem;
-      margin: auto;
-    }
+.container-2 {
+  max-width: 73.125rem;
+  margin: auto;
+}
 
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-    ul {
-      list-style: none;
-    }
+ul {
+  list-style: none;
+}
 
-    .footer {
-      background-color: #D3D3D3;
-      padding: 4.375rem 0;
-    }
+.footer {
+  background-color: #D3D3D3;
+  padding: 4.375rem 0;
+}
 
-    .footer-col {
-      width: 25%;
-      padding: 0 0.938rem;
-    }
+.footer-col {
+  width: 25%;
+  padding: 0 0.938rem;
+}
 
-    .footer-col h4 {
-      font-size: 1.125rem;
-      color: black;
-      text-transform: capitalize;
-      margin-bottom: 2.188rem;
-      font-weight: 500;
-      position: relative;
-      display: column;
+.footer-col h4 {
+  font-size: 1.125rem;
+  color: black;
+  text-transform: capitalize;
+  margin-bottom: 2.188rem;
+  font-weight: 500;
+  position: relative;
+  display: column;
+}
 
-    }
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 0.125rem;
+  box-sizing: border-box;
+  width: 3.125rem;
+}
 
-    .footer-col h4::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      background-color: #e91e63;
-      height: 0.125rem;
-      box-sizing: border-box;
-      width: 3.125rem;
-    }
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
 
-    .footer-col ul li:not(:last-child) {
-      margin-bottom: 0.625rem;
-    }
+.footer-col ul li a {
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  display: block;
+  transition: all 0.3s ease;
+}
 
-    .footer-col ul li a {
-      font-size: 1rem;
-      text-transform: capitalize;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 300;
-      color: black;
-      display: block;
-      transition: all 0.3s ease;
-    }
+.footer-col ul li a:hover {
+  color: goldenrod;
+  padding-left: 0.625;
+}
 
-    .footer-col ul li a:hover {
-      color: goldenrod;
-      padding-left: 0.625;
-    }
+.footer-col .social-links a {
+  display: inline-block;
+  height: 2rem;
+  width: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0 0.630rem 630rem 0;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 50%;
+  color: black;
+  transition: all 0.5s ease;
+}
 
-    .footer-col .social-links a {
-      display: inline-block;
-      height: 2rem;
-      width: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.2);
-      margin-right: 0 0.630rem 630rem 0;
-      text-align: center;
-      line-height: 2.5rem;
-      border-radius: 50%;
-      color: black;
-      transition: all 0.5s ease;
-    }
+.footer-col .social-links a:hover {
+  color: goldenrod;
+  background-color: #ffffff;
+}
 
-    .footer-col .social-links a:hover {
-      color: goldenrod;
-      background-color: #ffffff;
-    }
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
+  }
 
+  .footer-col h4::before {
+    left: 9rem;
+    width: 25%;
+  }
 
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 
-    @media(max-width: 767px) {
-      footer {
-        text-align: center;
-      }
+  /* Product Categories */
+  .product-categories {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
 
-      .footer-col h4::before {
-        left: 9rem;
-        width: 25%;
-      }
+  .dropdown {
+    margin-bottom: 1em;
+  }
 
-      .footer-col {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-    }
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #root {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .box {
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 1em;
+  }
+
+  .img-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .left {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  img {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    /* position: fixed; */
+    bottom: 0;
+  }
+}
   </style>
   <title>Document</title>
 
@@ -146,7 +195,7 @@
       </nav>
       <div class="icon">
         <a href="#" class="menu-btn"><ion-icon name="menu-outline"></ion-icon></a>
-        <a href="checkout.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
       </div>
     </div>
 
@@ -181,8 +230,8 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Our services</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Our services</a></li>
               <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Affiliate program</a></li>
             </ul>
@@ -194,15 +243,15 @@
               <li><a href="#">Shipping</a></li>
               <li><a href="#">Returns</a></li>
               <li><a href="#">Order Status</a></li>
-              <li><a href="#">Payment Options</a></li>
+              <li><a href="payment-form.html">Payment Options</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Follow us</h4>
             <div class="social-links">
-              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a href="https://www.facebook.com/kathleenmae.dalen"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a href="https://twitter.com/home"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a href="https://www.instagram.com/kath_ziah/"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
           </div>
         </div>
@@ -288,34 +337,41 @@
         // Toggle the active class on the navigation element
         nav.classList.toggle('active');
       });
+
+
     </script>
 
 
     <script>
-      // Array to store the items in the cart
-      const cartItems = [];
+      // Retrieve the cartItems from local storage or set it to an empty array
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Function to save the cartItems to local storage
+      function saveCartItems() {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }
 
       // Function to add an item to the cart
       function addToCart(item) {
-        // Add the item to the cartItems array
         cartItems.push(item);
-
-        // Call the updateCart function to update the sidebar
+        saveCartItems();
         updateCart();
       }
 
       // Function to remove an item from the cart
       function removeFromCart(index) {
-        // Remove the item from the cartItems array at the specified index
         cartItems.splice(index, 1);
-
-        // Call the updateCart function to update the sidebar
+        saveCartItems();
         updateCart();
       }
+
       // Function to update the cart in the sidebar
       function updateCart() {
         const cartElement = document.querySelector('.cart-item');
         const totalElement = document.getElementById('total');
+
+
+        saveCartItems(); // Save the cartItems after updating the cart
 
         // Clear the existing cart items in the sidebar
         cartElement.innerHTML = '';
@@ -338,7 +394,9 @@
           itemImageElement.src = item.image;
           itemImageElement.alt = item.title;
           itemImageElement.classList.add('cart-item-image');
-          itemImageElement.style.width = '50px'; // Adjust the width to your desired size
+          itemImageElement.style.width = '70px'; 
+          itemImageElement.style.marginTop = '8px';
+          itemImageElement.style.marginRight = '25px';
 
           const itemTitleElement = document.createElement('p');
           itemTitleElement.innerHTML = item.title;
@@ -385,10 +443,21 @@
         });
       });
 
+      // Call the updateCart function when the page loads to display the saved cart items
+      updateCart();
+
+    </script>
+    <script>
+      // Add a click event listener to the checkout button
+      const checkoutButton = document.getElementById('checkoutButton');
+      checkoutButton.addEventListener('click', () => {
+        // Redirect to the payment-form.html page
+        window.location.href = 'payment-form.html';
+      });
+
+
     </script>
 
-
-    <script src="addtocart.js"></script>
 
 </body>
 
